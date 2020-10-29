@@ -16,11 +16,17 @@ provider:
   stage: dev
 
 functions:
-  first:
-    handler: first.hello
-  second:
-    handler: second.hello
+  getProductsList:
+    handler: getProductsList.get
+    events:
+    - http:
+        method: get
+        path: products
+        cors: true
+  getProductsById:
+    handler: getProductsById.get
     events:
       - http:
           method: get
           path: second
+          cors: true
