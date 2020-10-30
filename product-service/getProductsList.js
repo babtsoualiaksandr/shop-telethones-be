@@ -4,6 +4,7 @@ export const get = (event, context, cb) => {
   const p = new Promise(resolve => {
     resolve('success');
   });
+
   const response = {
     statusCode: 200,
     body: JSON.stringify(
@@ -12,5 +13,6 @@ export const get = (event, context, cb) => {
       2
     ),
   };
+  
   p.then(() => cb(null, response)).catch(e => cb(e));
 };

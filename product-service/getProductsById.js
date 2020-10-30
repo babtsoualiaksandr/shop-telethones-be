@@ -1,18 +1,16 @@
 // eslint-disable-next-line import/prefer-default-export
-export const get = (event, context, cb) => {
-  const p = new Promise(resolve => {
-    resolve('success');
-  });
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: 'Go Serverless Webpack (Ecma Script) v1.0! Second module!',
-        input: event,
-      },
-      null,
-      2
-    ),
+import products from './data/products'
+export async function get(event) {
+  const id = event.pathParameters.productId;
+  const product = products.find(x => x.id == id);
+  if (product === undefined) {
+    return {
+      statusCode: 404,
+      body: JSON.stringify({error: 'Not found'}),
   };
-  p.then(() => cb(null, response)).catch(e => cb(e));
-};
+  }
+    return {
+        statusCode: 200,
+        body: JSON.stringify({product}),
+    };
+}
