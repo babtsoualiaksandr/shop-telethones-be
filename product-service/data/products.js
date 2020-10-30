@@ -1,16 +1,16 @@
 export default [{
   "id": "c2b664c524dbc4047f9c8532cc1b6dda6d2dbcea",
-  "title": "ZTE",
+  "title": "Google",
   "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
   "price": 81
 }, {
   "id": "8876ec2ca11c116dba7d3094b344290217c689f7",
-  "title": "Samsung",
+  "title": "Google",
   "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
   "price": 7
 }, {
   "id": "0772caa0a098b5a090904d17356c5ee7984e3f05",
-  "title": "Huavei",
+  "title": "Redmi",
   "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
   "price": 59
 }, {
@@ -25,7 +25,7 @@ export default [{
   "price": 35
 }, {
   "id": "8e62f7cea51bd87d08c4e77d17ec161108443f6b",
-  "title": "Samsung",
+  "title": "Redmi",
   "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
   "price": 97
 }, {
@@ -60,7 +60,7 @@ export default [{
   "price": 71
 }, {
   "id": "4dd7ae5794af65cf12091e458a9193d2acb50a12",
-  "title": "Samsung",
+  "title": "Google",
   "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
   "price": 67
 }, {
@@ -70,7 +70,7 @@ export default [{
   "price": 2
 }, {
   "id": "f96b7a56852024b3ca6bf8dd6369e6c571a3d5c6",
-  "title": "Huavei",
+  "title": "Redmi",
   "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
   "price": 43
 }, {
@@ -85,7 +85,7 @@ export default [{
   "price": 29
 }, {
   "id": "ebf6eca527ffb20936d25323c1fe791c08ec9d89",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
   "price": 66
 }, {
@@ -110,7 +110,7 @@ export default [{
   "price": 75
 }, {
   "id": "336dcbcc2a64aedd9b466d5ecdc6b87d30cf5971",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
   "price": 62
 }, {
@@ -120,12 +120,12 @@ export default [{
   "price": 68
 }, {
   "id": "35285bb38ec143fa07e54096ff41b940cffb93d8",
-  "title": "Samsung",
+  "title": "Redmi",
   "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
   "price": 5
 }, {
   "id": "e5883c26533ec3906205f2a051b135a75d5f830d",
-  "title": "Huavei",
+  "title": "Google",
   "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
   "price": 55
 }, {
@@ -175,7 +175,7 @@ export default [{
   "price": 35
 }, {
   "id": "f03ab80e269212fc3e8e74f9f7b1e01b1edf04f1",
-  "title": "Huavei",
+  "title": "Redmi",
   "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
   "price": 14
 }, {
@@ -190,7 +190,7 @@ export default [{
   "price": 19
 }, {
   "id": "9c62114eff0321818ff64b4f9f37bfdb4f55a574",
-  "title": "Apple",
+  "title": "Google",
   "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
   "price": 39
 }, {
@@ -215,7 +215,7 @@ export default [{
   "price": 25
 }, {
   "id": "8e05ca64b6aebf14d9b9d3025dfbe42c19ff6f74",
-  "title": "ZTE",
+  "title": "Redmi",
   "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
   "price": 51
 }, {
@@ -225,12 +225,12 @@ export default [{
   "price": 40
 }, {
   "id": "7ae755ec4eadf6b2601699cad1dcc7cdc4b21f83",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
   "price": 31
 }, {
   "id": "890e78681eb4d83482ae3ed4679001bfd2c75c24",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
   "price": 60
 }, {
@@ -240,7 +240,7 @@ export default [{
   "price": 100
 }, {
   "id": "2d324034284a888b1885cb6afcf91a2b24607e76",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
   "price": 55
 }, {
@@ -260,12 +260,12 @@ export default [{
   "price": 8
 }, {
   "id": "16457979829a714254e8066ebfef41152c3d7e52",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
   "price": 55
 }, {
   "id": "b76512a692e105177e657ae30ddf79112c25be9b",
-  "title": "ZTE",
+  "title": "Redmi",
   "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.",
   "price": 40
 }, {
@@ -280,17 +280,17 @@ export default [{
   "price": 64
 }, {
   "id": "8dfa5551cdfe19a88ae32fa6c215f620db6a5f51",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
   "price": 85
 }, {
   "id": "7a5b3e1fefe08acad0dd0138069239764c499649",
-  "title": "Samsung",
+  "title": "Google",
   "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
   "price": 64
 }, {
   "id": "7a383e89704d176a9e74a4ec307deab3a01d9efd",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
   "price": 94
 }, {
@@ -310,7 +310,7 @@ export default [{
   "price": 87
 }, {
   "id": "6b74f3f45dd9310956ebe39c9d6088b3e45b3819",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
   "price": 89
 }, {
@@ -325,7 +325,7 @@ export default [{
   "price": 88
 }, {
   "id": "be08975bc71dcf507c3c8db24556b39a07e5fa3e",
-  "title": "Samsung",
+  "title": "Redmi",
   "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
   "price": 42
 }, {
@@ -335,7 +335,7 @@ export default [{
   "price": 81
 }, {
   "id": "8225d304b36855bc963ddcbd0b86fa7e767ec4e8",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
   "price": 56
 }, {
@@ -345,7 +345,7 @@ export default [{
   "price": 12
 }, {
   "id": "d2970b9ec00cd8d05eeb266ab697218a16e44d5b",
-  "title": "ZTE",
+  "title": "Honor",
   "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
   "price": 71
 }, {
@@ -370,17 +370,17 @@ export default [{
   "price": 2
 }, {
   "id": "f97c719e73d00036c7b9c40bdbdb9a0a67eab716",
-  "title": "Samsung",
+  "title": "Honor",
   "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
   "price": 88
 }, {
   "id": "8cf6692ece4cabf72f2a6d26bcc71541c98f52f1",
-  "title": "ZTE",
+  "title": "Google",
   "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
   "price": 59
 }, {
   "id": "a789600e9dbff7a7d50161e9111ff33536da25ef",
-  "title": "ZTE",
+  "title": "Redmi",
   "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
   "price": 68
 }, {
@@ -410,12 +410,12 @@ export default [{
   "price": 55
 }, {
   "id": "0a23797d81cd33060881176e4a38d1c232f2397e",
-  "title": "Huavei",
+  "title": "Redmi",
   "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
   "price": 29
 }, {
   "id": "c49673e9294bb5d46eea923b76e18b8d161b3ef9",
-  "title": "ZTE",
+  "title": "Honor",
   "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
   "price": 7
 }, {
@@ -445,17 +445,17 @@ export default [{
   "price": 54
 }, {
   "id": "4fb6c298b061ee0331da0743dcc43bb23b88233f",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.",
   "price": 86
 }, {
   "id": "d26a59dd82acc8c591dbb86cb9afe5969c13ba47",
-  "title": "Huavei",
+  "title": "Redmi",
   "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.",
   "price": 59
 }, {
   "id": "abd4b8f15362614adc1ad2cfb7ffc77c0b9e66f1",
-  "title": "Huavei",
+  "title": "Google",
   "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
   "price": 29
 }, {
@@ -480,7 +480,7 @@ export default [{
   "price": 83
 }, {
   "id": "7806d9f20ae8088dea25d081e10ce0467c56db09",
-  "title": "ZTE",
+  "title": "Honor",
   "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
   "price": 92
 }, {
@@ -490,12 +490,12 @@ export default [{
   "price": 81
 }, {
   "id": "3c93f671475e97e9d44f0deb91b068ea4cd5fd1d",
-  "title": "Huavei",
+  "title": "Redmi",
   "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
   "price": 83
 }, {
   "id": "dbf7e3218f8d302651bff0c2541f2bddead2596a",
-  "title": "Huavei",
+  "title": "Huawei",
   "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
   "price": 97
 }];
