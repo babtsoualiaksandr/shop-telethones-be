@@ -11,3 +11,5 @@ This runs your code locally by emulating the AWS Lambda environment. Please keep
 
 npm install --save-dev serverless-jest-plugin
 https://github.com/nordcloud/serverless-jest-plugin
+
+## feature: add swagger yaml https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-export-api.html
