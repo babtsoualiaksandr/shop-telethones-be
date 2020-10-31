@@ -13,3 +13,5 @@ npm install --save-dev serverless-jest-plugin
 https://github.com/nordcloud/serverless-jest-plugin
 
 ## feature: add swagger yaml https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-export-api.html
+
+## aws apigateway get-export --parameters extensions='apigateway' --rest-api-id dhsvydcw18 --stage-name dev --export-type swagger latestswagger2.json
