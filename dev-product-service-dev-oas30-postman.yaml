@@ -1,0 +1,119 @@
+---
+swagger: "2.0"
+info:
+  version: "2020-10-30T15:26:36Z"
+  title: "dev-product-service"
+host: "dhsvydcw18.execute-api.eu-west-1.amazonaws.com"
+basePath: "/dev"
+schemes:
+- "https"
+paths:
+  /products:
+    get:
+      responses: {}
+      x-amazon-apigateway-integration:
+        type: "aws_proxy"
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:771365483857:function:product-service-dev-getProductsList/invocations"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+      x-amazon-apigateway-integration:
+        type: "mock"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: "#set($origin = $input.params(\"Origin\"))\n#if($origin\
+                \ == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\"\
+                .+\")) #set($context.responseOverride.header.Access-Control-Allow-Origin\
+                \ = $origin) #end"
+        requestTemplates:
+          application/json: "{statusCode:200}"
+        passthroughBehavior: "when_no_match"
+        contentHandling: "CONVERT_TO_TEXT"
+  /products/{productId}:
+    get:
+      responses: {}
+      x-amazon-apigateway-integration:
+        type: "aws_proxy"
+        uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:771365483857:function:product-service-dev-getProductsById/invocations"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+      x-amazon-apigateway-integration:
+        type: "mock"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: "#set($origin = $input.params(\"Origin\"))\n#if($origin\
+                \ == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\"\
+                .+\")) #set($context.responseOverride.header.Access-Control-Allow-Origin\
+                \ = $origin) #end"
+        requestTemplates:
+          application/json: "{statusCode:200}"
+        passthroughBehavior: "when_no_match"
+        contentHandling: "CONVERT_TO_TEXT"
+x-amazon-apigateway-documentation:
+  version: "v.1.2"
+  createdDate: "2020-10-31T09:12:03Z"
+  documentationParts:
+  - location:
+      type: "MODEL"
+      name: "product"
+    properties:
+      id: "string"
+      title: "string"
+      description: "string"
+      price: "number"
+  - location:
+      type: "RESPONSE"
+      path: "/products/{productId}"
+      method: "OPTIONS"
+      statusCode: "200"
+    properties:
+      product: "product"
+  - location:
+      type: "RESPONSE"
+      path: "/products"
+      method: "OPTIONS"
+      statusCode: "200"
+    properties:
+      products:
+      - product: "product"

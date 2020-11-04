@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title" : "Product",
+  "type": "object",  
+   "properties": {
+       "product": {
+            "type": "object",
+            "properties": {
+                "id": { "type": "string" },
+                "title": { "type": "string" },
+                "description":{ "type": "string" },
+                "price": { "type": "integer" }
+            }
+        }
+    }
+}
