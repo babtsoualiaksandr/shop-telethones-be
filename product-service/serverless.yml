@@ -16,6 +16,14 @@ provider:
   region: eu-west-1
   stage: dev
 
+  environment: 
+    PG_HOST: shop-instance.cs2gr38arhyk.eu-west-1.rds.amazonaws.com
+    PG_PORT: 5432
+    PG_DATABASE: phones
+    PG_USERNAME: postgres
+    PG_PASSWORD: lG4MHcjFFk1YCY7xAV2T
+
+
 custom:
   jest:
     # You can pass jest options here
