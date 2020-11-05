@@ -79,3 +79,36 @@ module.exports.getProduct = async (id) => {
       client.end();
   }
 };
+
+module.exports.postProducts = async (products) => {
+  console.log('HhHHHHHHHH', products);
+  const client = new Client(dbOptions);
+  await client.connect();
+
+  try {
+    const {title, description, price, count} = products
+    const sqlInsertProduct = `
+    INSERT INTO products (title, description, price)
+    VALUES ('${title}', '${description}', ${price})
+    RETURNING id;`
+      console.log(sqlInsertProduct);
+      const { rows: req} = await client.query(sqlInsertProduct);
+      console.log(req);
+      console.log(req[0]["id"]);
+    
+      const sqlInsertStocks = `
+      INSERT INTO stocks (product_id, count)
+      VALUES ('${req[0]["id"]}', ${count})
+      RETURNING id;;`
+        console.log(sqlInsertStocks);
+        const { rows: id} = await client.query(sqlInsertStocks);
+        console.log(id);
+
+      return req;
+  } catch (error) {
+      console.log('Error DB');
+  } finally {
+    console.log('finally')
+      client.end();
+  }
+};
