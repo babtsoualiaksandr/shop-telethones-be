@@ -4,8 +4,9 @@ import pg_client from './data/pg_client';
 
 export async function get(event) {
   const id = event.pathParameters.productId;
-  const listProducts =  await pg_client.getListProducts();
-  const product = listProducts.find(x => x.id == id);
+  // const listProducts =  await pg_client.getListProducts();
+  // const product = listProducts.find(x => x.id == id);
+  const product = await pg_client.getProduct(id);
   if (product === undefined) {
     return {
       statusCode: 404,

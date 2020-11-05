@@ -36,8 +36,8 @@ module.exports.getListProducts = async (event) => {
 };
 
 
-module.exports.getProduct = async (event) => {
-  console.log('HhHHHHHHHH');
+module.exports.getProduct = async (id) => {
+  console.log('HhHHHHHHHH', id);
   console.log(dbOptions);
   const client = new Client(dbOptions);
   await client.connect();
@@ -50,7 +50,7 @@ module.exports.getProduct = async (event) => {
         price integer
     );`);
 
-      console.log(ddlResult);
+
       const ddlResult1 = await client.query(`
   create table  if not exists stocks (
     id uuid primary key default uuid_generate_v4(),
@@ -59,13 +59,15 @@ module.exports.getProduct = async (event) => {
       foreign key ("product_id") references "products" ("id")
   );`);
 
-      console.log(ddlResult1);
-      const { rows: products } = await client.query(`
-           SELECT products.id, stocks.count, products.title,
-           products.description, products.price
-           from products
-           RIGHT JOIN stocks ON products.id = stocks.product_id;
-      `);
+      const sql = `
+      SELECT products.id, stocks.count, products.title,
+      products.description, products.price
+      FROM products
+      RIGHT JOIN stocks ON products.id = stocks.product_id
+      WHERE products.id = '${id}';`
+      console.log(sql);
+      const { rows: products } = await client.query(sql);
+
       console.log(products);
       return products;
   } catch (error) {
