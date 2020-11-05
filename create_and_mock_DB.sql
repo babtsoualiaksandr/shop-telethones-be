@@ -15,7 +15,7 @@
 );*/
 
 INSERT INTO products (title, description, price)
-VALUES ('APPLE', 'description PRODUCTS ONE', 100);*/
+VALUES ('APPLE', 'description PRODUCTS ONE', 100);
 
 do $$
 DECLARE title text := 'title product';
