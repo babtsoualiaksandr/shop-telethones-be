@@ -1,6 +1,8 @@
 const { Client } = require('pg');
 
-const { PG_HOST, PG_PORT, PG_DATABASE, PG_USERNAME, PG_PASSWORD } = process.env;
+
+const { PG_HOST, PG_PORT, PG_DATABASE, PG_USERNAME, PG_PASSWORD } = JSON.parse(process.env.db_connect);
+
 const dbOptions = {
     host: PG_HOST,
     port: PG_PORT,

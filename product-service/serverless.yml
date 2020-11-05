@@ -17,11 +17,7 @@ provider:
   stage: dev
 
   environment: 
-    PG_HOST: shop-instance.cs2gr38arhyk.eu-west-1.rds.amazonaws.com
-    PG_PORT: 5432
-    PG_DATABASE: phones
-    PG_USERNAME: postgres
-    PG_PASSWORD: lG4MHcjFFk1YCY7xAV2T
+    db_connect: ${file(/Users/alexander/Documents/Node_JS_AWS/shop-telethones-be/product-service/secret_ID)}
 
 
 custom:
@@ -30,6 +26,7 @@ custom:
     # See details here: https://facebook.github.io/jest/docs/configuration.html
     # For instance, uncomment next line to enable code coverage
     # collectCoverage: true
+    
 
 functions:
   getProductsList:
