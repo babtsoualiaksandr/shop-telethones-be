@@ -19,8 +19,8 @@ export async function post(event) {
     const product = await pg_client.postProducts(products);
     if (product === undefined) {
         return {
-            statusCode: 404,
-            body: JSON.stringify({ error: 'Not found' }),
+            statusCode: 500,
+            body: JSON.stringify({ error: 'DB connection, any unhandled error in code' }),
         };
     }
     return {
