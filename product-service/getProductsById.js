@@ -3,6 +3,7 @@
 import pg_client from './data/pg_client';
 
 export async function get(event) {
+  console.log(event);
   const id = event.pathParameters.productId;
   // const listProducts =  await pg_client.getListProducts();
   // const product = listProducts.find(x => x.id == id);

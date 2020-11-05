@@ -4,10 +4,8 @@
 import pg_client from './data/pg_client';
 
 export async function get(event) {
-
+  console.log(event);
   const products =  await pg_client.getListProducts();
-
-
   if (products === []) {
     return {
       statusCode: 404,

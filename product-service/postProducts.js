@@ -5,11 +5,9 @@ import { patternProduct } from './Models/insertProducts';
 const jpv = require('jpv');
 
 export async function post(event) {
+    console.log(event);
     const products = event.pathParameters.products;
-    console.log(products);
-
     const validRequest = jpv.validate(products, patternProduct);
-    console.log(validRequest);
     if (validRequest !== true) {
         return {
             statusCode: 400,

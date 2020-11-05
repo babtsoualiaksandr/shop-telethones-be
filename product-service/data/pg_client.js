@@ -17,8 +17,6 @@ const dbOptions = {
 };
 
 module.exports.getListProducts = async (event) => {
-    console.log('HhHHHHHHHH');
-    console.log(dbOptions);
     const client = new Client(dbOptions);
     await client.connect();
     try {
@@ -28,7 +26,6 @@ module.exports.getListProducts = async (event) => {
              from products
              RIGHT JOIN stocks ON products.id = stocks.product_id;
         `);
-        console.log(products);
         return products;
     } catch (error) {
         console.log('Error DB');
@@ -39,8 +36,6 @@ module.exports.getListProducts = async (event) => {
 };
 
 module.exports.getProduct = async (id) => {
-    console.log('HhHHHHHHHH', id);
-    console.log(dbOptions);
     const client = new Client(dbOptions);
     await client.connect();
     try {
@@ -66,10 +61,7 @@ module.exports.getProduct = async (id) => {
       FROM products
       RIGHT JOIN stocks ON products.id = stocks.product_id
       WHERE products.id = '${id}';`;
-        console.log(sql);
         const { rows: products } = await client.query(sql);
-
-        console.log(products);
         return products;
     } catch (error) {
         console.log('Error DB');
@@ -90,20 +82,14 @@ module.exports.postProducts_ = async (products) => {
     INSERT INTO products (title, description, price)
     VALUES ('${title}', '${description}', ${price})
     RETURNING id;`;
-        console.log(sqlInsertProduct);
         const { rows: req } = await client.query(sqlInsertProduct);
-        console.log(req);
-        console.log(req[0]['id']);
 
         const sqlInsertStocks = `
       INSERT INTO stocks (product_id, count)
       VALUES ('${req[0]['id']}', ${count})
       RETURNING id;
       COMMIT;`;
-        console.log(sqlInsertStocks);
         const { rows: id } = await client.query(sqlInsertStocks);
-        console.log(id);
-
         return req;
     } catch (error) {
         console.log('Error DB');
@@ -114,31 +100,22 @@ module.exports.postProducts_ = async (products) => {
 };
 
 module.exports.postProducts = async (products) => {
-  console.log('HhHHHHHHHH', products);
   const client = new Client(dbOptions);
   await client.connect();
-
   try {
     await client.query('BEGIN');
     const { title, description, price, count } = products;
     const sqlInsertProduct = `
           INSERT INTO products (title, description, price)
           VALUES ('${title}', '${description}', ${price})
-          RETURNING id;`;
-    console.log(sqlInsertProduct);
-    
+          RETURNING id;`;    
     const resultInsertProducts = await client.query(sqlInsertProduct);
-    console.log(resultInsertProducts);
-    console.log(resultInsertProducts.rows[0]['id']);
 
     const sqlInsertStocks = `
     INSERT INTO stocks (product_id, count)
     VALUES ('${resultInsertProducts.rows[0]['id']}', ${count})
     RETURNING id;`;
-    console.log(sqlInsertStocks);
     const resultInsertStocks = await client.query(sqlInsertStocks);
-    
-    console.log(resultInsertStocks);
     await client.query('COMMIT');
     return resultInsertStocks;
   } catch (error) {
@@ -147,6 +124,5 @@ module.exports.postProducts = async (products) => {
   } finally {
       console.log('finally ALL');
       client.end();
-  }
-    
+  }    
 };
