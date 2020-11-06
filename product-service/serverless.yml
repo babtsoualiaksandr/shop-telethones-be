@@ -43,10 +43,15 @@ functions:
           method: get
           path: /products/{productId}
           cors: true
+          request: 
+            parameters: 
+              paths: 
+                productId: true
   postProducts:
     handler: postProducts.post
     events:
       - http:
           method: post
-          path: /products/{products}
+          path: products
           cors: true
+

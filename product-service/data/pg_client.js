@@ -1,3 +1,4 @@
+'use strict';
 const { Client } = require('pg');
 
 const { PG_HOST, PG_PORT, PG_DATABASE, PG_USERNAME, PG_PASSWORD } = JSON.parse(
@@ -99,30 +100,36 @@ module.exports.postProducts_ = async (products) => {
     }
 };
 
-module.exports.postProducts = async (products) => {
-  const client = new Client(dbOptions);
-  await client.connect();
-  try {
-    await client.query('BEGIN');
+module.exports.postProducts = async (prod) => {
+    const client = new Client(dbOptions);
+    const products = JSON.parse(prod);
     const { title, description, price, count } = products;
-    const sqlInsertProduct = `
+    await client.connect();
+    try {
+        await client.query('BEGIN');
+        const sqlInsertProduct = `
           INSERT INTO products (title, description, price)
           VALUES ('${title}', '${description}', ${price})
-          RETURNING id;`;    
-    const resultInsertProducts = await client.query(sqlInsertProduct);
-
-    const sqlInsertStocks = `
-    INSERT INTO stocks (product_id, count)
-    VALUES ('${resultInsertProducts.rows[0]['id']}', ${count})
-    RETURNING id;`;
-    const resultInsertStocks = await client.query(sqlInsertStocks);
-    await client.query('COMMIT');
-    return resultInsertStocks;
-  } catch (error) {
-      await client.query('ROLLBACK')
-      console.log('Error DB => ROLLBACK');
-  } finally {
-      console.log('finally ALL');
-      client.end();
-  }    
+          RETURNING id;`;
+        console.log('sqlInsertProduct :', sqlInsertProduct);
+        const resultInsertProducts = await client.query(sqlInsertProduct);
+        console.log('resultInsertProducts ', resultInsertProducts);
+        const productdIdNew = resultInsertProducts.rows[0]['id'];
+        const sqlInsertStocks = `
+             INSERT INTO stocks (product_id, count)
+             VALUES ('${productdIdNew}', ${count})
+             RETURNING id;`;
+        console.log('sqlInsertStocks :', sqlInsertStocks);
+        const resultInsertStocks = await client.query(sqlInsertStocks);
+        console.log('resultInsertStocks ', resultInsertStocks);
+        await client.query('COMMIT');
+        return products;
+    } catch (error) {
+        await client.query('ROLLBACK');
+        console.log('Error DB => ROLLBACK');
+        return error;
+    } finally {
+        console.log('finally ALL');
+        client.end();
+    }
 };
