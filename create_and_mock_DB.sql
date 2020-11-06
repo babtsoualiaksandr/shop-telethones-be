@@ -1,21 +1,24 @@
-/*create table products (
+create table products (
 	id uuid primary key default uuid_generate_v4(),
 	title text not null,
     description text,
-    price integer
-);*/
+    price numeric
+);
 
 -- CREATE extension if not exists "uuid-ossp";
 
-/*create table stocks (
+create table stocks (
 	id uuid primary key default uuid_generate_v4(),
-    product_id uuid,
-    count integer,
+    product_id uuid UNIQUE,
+    count numeric,
     foreign key ("product_id") references "products" ("id")
-);*/
+);
 
 INSERT INTO products (title, description, price)
 VALUES ('APPLE', 'description PRODUCTS ONE', 100);
+
+
+
 
 do $$
 DECLARE title text := 'title product';
@@ -29,7 +32,10 @@ end loop;
 end;
 $$;
 
--- TRUNCATE products CASCADE
+TRUNCATE products CASCADE
+
+DROP TABLE products;
+DROP TABLE stocks;
 
 INSERT INTO stocks (product_id, count) SELECT id, price FROM products;
 
