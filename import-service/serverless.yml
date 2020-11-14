@@ -7,6 +7,7 @@ frameworkVersion: '2'
 
 plugins:
   - serverless-webpack
+  - serverless-jest-plugin
 
 provider:
   name: aws

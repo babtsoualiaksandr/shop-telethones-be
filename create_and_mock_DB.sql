@@ -43,3 +43,9 @@ INSERT INTO stocks (product_id, count) SELECT id, price FROM products;
 
 
 
+
+
+
+
+
+
