@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Serverless webpack example using ecma script",
   "scripts": {
-    "test": "jest",
+    "test": "sls invoke test --stage dev --region eu-west-1",
     "deploy": "sls deploy --region eu-west-1"
   },
   "devDependencies": {
