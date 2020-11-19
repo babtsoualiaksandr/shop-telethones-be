@@ -1,4 +1,5 @@
 const AWS = require('aws-sdk');
+
 const csv = require('csv-parser');
 
 const BUCKET = 'storage-pothes-store';
@@ -7,36 +8,33 @@ const HEADER_CORS = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Credentials': true,
 };
-export function parser(event) {
+export function parser({ Records }) {
     const s3 = new AWS.S3({ region: 'eu-west-1' });
-    event.Records.forEach((record) => {
+    const sqs = new AWS.SQS();
+
+    Records.forEach((record) => {
         const s3Stream = s3
             .getObject({
                 Bucket: BUCKET,
                 Key: record.s3.object.key,
             })
             .createReadStream();
-        s3Stream
-            .pipe(csv())
-            .on('data', (data) => {
-                console.log(data);
-            })
-            .on('end', (dataEnd) => {
-                console.log(dataEnd);
-            })
-            .on('error', (e) => {
-                console.log(e);
-            });
 
         s3Stream
             .pipe(csv())
             .on('data', (data) => {
-                console.log('rows csv to Object = ', data);
+                sqs.sendMessage(
+                    {
+                        QueueUrl: process.env.SQS_URL,
+                        MessageBody: JSON.stringify(data),
+                    },
+                    (error) => {
+                        console.error(error);
+                    }
+                );
             })
-            .end('end', async () => {
-                console.log('Copy from ' + BUCKET + '/' + record.s3.object.key);
-                console.log(BUCKET + '/' + record.s3.object.key);
-                console.log(record.s3.object.key.replace('uploaded', 'parsed'));
+
+            .on('end', async () => {
                 await s3
                     .copyObject({
                         Bucket: BUCKET,
