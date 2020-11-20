@@ -37,15 +37,26 @@ resources:
       Type: AWS::SNS::Topic
       Properties:
         TopicName: product-service-Topic
-    SNCSubscription:
+    SNCSubscription1:
       Type: AWS::SNS::Subscription
       Properties:
         Endpoint: babtsoualiaksandr@gmail.com
         Protocol: email
         TopicArn: 
           Ref: SNSTopic
-
-
+        FilterPolicy:
+          title: 
+            - Apple
+    SNCSubscription2:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Endpoint: abobcmail@gmail.com
+        Protocol: email
+        TopicArn: 
+          Ref: SNSTopic
+        FilterPolicy:
+          title: 
+            - Phone1  
 
 functions:
   getProductsList:

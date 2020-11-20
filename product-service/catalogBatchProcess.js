@@ -16,6 +16,7 @@ export function getUserFromCsv(event) {
             Subject: 'Subject',
             Message: JSON.stringify(products),
             TopicArn: process.env.SNS_ARN,
+            
         },
         () => {
             console.log('Send email for ' + JSON.stringify(products));
