@@ -1,3 +1,7 @@
+![1](screen.png)
+![2](screen2.png)
+![3](screen.3png)
+
 # shop-telethones-be
 A phone store built on a microservice architecture AWS 
 

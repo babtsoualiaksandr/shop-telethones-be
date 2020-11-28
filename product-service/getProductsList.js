@@ -1,7 +1,11 @@
 // eslint-disable-next-line import/prefer-default-export
-import products from './data/products'
+// import products from './data/products'
+
+import pg_client from './data/pg_client';
 
 export async function get(event) {
+  console.log(event);
+  const products =  await pg_client.getListProducts();
   if (products === []) {
     return {
       statusCode: 404,

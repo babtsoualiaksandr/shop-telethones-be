@@ -16,12 +16,17 @@ provider:
   region: eu-west-1
   stage: dev
 
+  environment: 
+    db_connect: ${file(/Users/alexander/Documents/Node_JS_AWS/shop-telethones-be/product-service/secret_ID)}
+
+
 custom:
   jest:
     # You can pass jest options here
     # See details here: https://facebook.github.io/jest/docs/configuration.html
     # For instance, uncomment next line to enable code coverage
     # collectCoverage: true
+    
 
 functions:
   getProductsList:
@@ -38,3 +43,15 @@ functions:
           method: get
           path: /products/{productId}
           cors: true
+          request: 
+            parameters: 
+              paths: 
+                productId: true
+  postProducts:
+    handler: postProducts.post
+    events:
+      - http:
+          method: post
+          path: products
+          cors: true
+
