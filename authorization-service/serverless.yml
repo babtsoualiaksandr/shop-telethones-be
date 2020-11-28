@@ -1,0 +1,35 @@
+service:
+  name: authorization-service
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+frameworkVersion: '2'
+
+plugins:
+  - serverless-webpack
+  - serverless-jest-plugin
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-1
+  stage: dev 
+
+        
+  environment:
+    
+
+  
+functions:
+  basicAuthorizer: 
+    handler: handler.tokenAuthorizer
+
+      
+
+resources:
+
+  
+ 
+
+

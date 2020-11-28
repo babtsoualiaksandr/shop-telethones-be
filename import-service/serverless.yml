@@ -9,6 +9,10 @@ plugins:
   - serverless-webpack
   - serverless-jest-plugin
 
+custom:
+  ${file(../authorization-service/serverless.yml)}
+
+
 provider:
   name: aws
   runtime: nodejs12.x
@@ -64,10 +68,24 @@ functions:
         method: GET
         path: /import
         cors: true
+        authorizer: 
+          name: tokenAuthorizer
+          arn:
+            !Join
+              - ':'
+              - - 'arn:aws:lambda'
+                - !Ref AWS::Region
+                - !Ref AWS::AccountId
+                - 'function:authorization-service-dev-basicAuthorizer'
+          resultTtlInSeconds: 0
+          identitySource: method.request.header.Authorization
+          type: token
         request:
           parameters:
             querystrings:
               name: true
+
+
               
   importFileParser:
     handler: importFileParser.parser
