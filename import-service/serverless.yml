@@ -10,7 +10,7 @@ plugins:
   - serverless-jest-plugin
 
 custom:
-  ${file(../authorization-service/serverless.yml)}
+
 
 
 provider:
@@ -33,20 +33,37 @@ provider:
       Action: 
         - 'sqs:*'
       Resource: 
-        - Fn::GetAtt: [ SQSQueue, Arn]
+        - Fn::GetAtt: [ SQSQueue, Arn] 
 
-        
   environment:
     SQS_URL:
       Ref: SQSQueue
+      
 
 resources:
   Resources:
+    GatewayResponseDenied:      
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Credentials: "'true'"
+        ResponseType: ACCESS_DENIED
+        RestApiId: !Ref ApiGatewayRestApi
+    GatewayResponseUnauthorized:      
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Credentials: "'true'"
+        ResponseType: UNAUTHORIZED
+        RestApiId: !Ref ApiGatewayRestApi
+
     SQSQueue:
       Type: AWS::SQS::Queue
-      Properties:
-        QueueName: catalogItemsQueue
-  
+      Properties: 
+        QueueName:  catalogItemsQueue
+
   Outputs:
     SQSQueueUrl:
       Value:
@@ -55,10 +72,7 @@ resources:
       Value:
         Fn::GetAtt: [ SQSQueue, Arn ]
 
-
-
-
-  
+ 
 
 functions:
   importCSVtoS:
@@ -83,10 +97,7 @@ functions:
         request:
           parameters:
             querystrings:
-              name: true
-
-
-              
+              name: true            
   importFileParser:
     handler: importFileParser.parser
     events:

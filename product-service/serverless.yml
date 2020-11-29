@@ -37,26 +37,13 @@ resources:
       Type: AWS::SNS::Topic
       Properties:
         TopicName: product-service-Topic
-    SNCSubscription1:
+    SNCSubscription:
       Type: AWS::SNS::Subscription
       Properties:
         Endpoint: babtsoualiaksandr@gmail.com
         Protocol: email
         TopicArn: 
           Ref: SNSTopic
-        FilterPolicy:
-          title: 
-            - Apple
-    SNCSubscription2:
-      Type: AWS::SNS::Subscription
-      Properties:
-        Endpoint: abobcmail@gmail.com
-        Protocol: email
-        TopicArn: 
-          Ref: SNSTopic
-        FilterPolicy:
-          title: 
-            - Phone1  
 
 functions:
   getProductsList:
@@ -88,7 +75,7 @@ functions:
     handler: catalogBatchProcess.getUserFromCsv
     events:
       - sqs:
-          batchSize: 5
+          batchSize: 2
           arn:
             - "${cf:import-service-${self:provider.stage}.SQSQueueArn}"
     
