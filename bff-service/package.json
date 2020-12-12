@@ -11,7 +11,7 @@
     "eb-deploy": "eb deploy",
     "eb-terminate": "eb terminate",
     "start": "node server.js",
-    "set-env": "eb setenv `cat .env.eb | sed '/^#/ d' | '/^$/ d'`"
+    "set-env": "eb setenv `cat .env.eb | sed '/^#/ d'`"
   },
   "repository": {
     "type": "git",
