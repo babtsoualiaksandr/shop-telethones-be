@@ -9,7 +9,9 @@ app.use(express.json());
 
 const cache = {};
 const CASHTIME = 2 * 1000 * 60;
+
 const midWare = (req, res, next) => {
+    console.log("req.method ===== ", req.method);
     const key = req.url;
     const now = new Date();
     if (cache[key] && now - cache[key].timeCache < CASHTIME) {
@@ -27,7 +29,11 @@ const midWare = (req, res, next) => {
     }
 };
 
-app.all('/*', midWare, (req, res) => {
+app.get('/product/products',midWare, (req, res, next) => {
+    next();
+})
+
+app.all('/*', (req, res) => {
     console.log('originalUrl', req.originalUrl);
     console.log('method', req.method);
     console.log('body', req.body);
