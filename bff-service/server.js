@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 
 const cache = {};
-const CASHTIME = 1 * 1000 * 60;
+const CASHTIME = 2 * 1000 * 60;
 const midWare = (req, res, next) => {
     const key = req.url;
     const now = new Date();
